@@ -1,0 +1,537 @@
+# IE 332 Project Report - Step 2 - Group 5
+Authors: Elçin Erhan, İrem Yılmaz, Ozan Metin Zehir
+## Introduction to cast.csv data set
+
+    *Cst_Cnt*: This variable serves as a unique identifier for each cast, allowing for the distinction of individual observations. It aids in referencing and organizing the data.
+
+*Cruise_ID*: Cruise_ID is an identifier associated with a specific cruise event. It serves as a categorical reference, helping categorize data based on the unique identifier assigned to each cruise.
+
+*Cruise*: Represented as a factor with 393 levels, the Cruise variable categorizes different cruises. Each level corresponds to a specific cruise event, offering a categorical framework for differentiation.
+
+*Cruz_Sta*: Cruz_Sta is a numeric code that denotes the station within a given cruise. It provides a means to spatially locate data points within the context of a cruise, aiding in the analysis of spatial patterns.
+
+*DbSta_ID*: DbSta_ID is an integer identifier associated with each station. This variable facilitates the unique identification and referencing of different stations in the dataset.
+
+*Cast_ID*: Cast_ID is an identifier for each cast, serving as a reference point to distinguish between individual casts within the dataset.
+
+*Sta_ID*: Sta_ID serves as an identifier for each station, offering a unique reference point for spatial information related to oceanographic observations.
+
+*Quarter*: Represented as a categorical factor with four levels (1, 2, 3, 4), Quarter categorizes the data based on the quarter of the year during which the observation was made. This variable introduces a temporal dimension to the dataset.
+
+*Sta_Code*: Sta_Code is a categorical factor that represents station codes. These codes may provide additional information or categorization for each station, aiding in station-related analyses.
+
+*Distance*: A numeric variable representing the distance. The 'N' notation might indicate missing values or undefined distances, and its interpretation would depend on the context of the dataset.
+
+*Date*: The Date variable represents the date of the cast, providing a temporal component to the dataset. It allows for the exploration of temporal trends or patterns in the data.
+
+*Year*: Represented as a categorical factor with 72 levels, Year categorizes the data based on the year during which the observation was made. This variable introduces a more granular temporal dimension.
+
+*Month*: Represented as a categorical factor with 12 levels (1, 2, 3, ..., 12), Month categorizes the data based on the month of the year during which the observation was made. It enables the analysis of seasonal patterns.
+
+*Julian_Date*: An integer representing the Julian date, providing an alternative time reference in a continuous format. It offers an additional temporal dimension to the dataset.
+
+*Julian_Day*: An integer representing the Julian day, serving as another temporal reference point. This variable provides a continuous measure of time, complementing other temporal variables.
+
+*Time*: Represents the time of the cast, providing the temporal aspect in a more granular format. This variable allows for the exploration of diurnal patterns in the data.
+
+*Lat_Dec*: Decimal latitude represents the geographical location of the observation in a continuous format. It provides precise spatial information about the latitude of each observation.
+
+*Lat_Deg*, *Lat_Min*, *Lat_Hem*: Components of latitude in degrees, minutes, and hemisphere, offering a detailed representation of the geographical coordinates. These variables contribute to a comprehensive spatial characterization.
+
+*Lon_Dec*: Decimal longitude represents the geographical location of the observation in a continuous format. It provides precise spatial information about the longitude of each observation.
+
+*Lon_Deg*, *Lon_Min*, *Lon_Hem*: Components of longitude in degrees, minutes, and hemisphere, offering a detailed representation of the geographical coordinates. These variables contribute to a comprehensive spatial characterization.
+
+*Rpt_Line*, *St_Line*, *Ac_Line*: Numeric variables related to lines, potentially representing different types of survey lines or paths. These variables might be associated with specific cruise or survey methodologies.
+
+*Rpt_Sta*, *St_Station*, *Ac_Sta*: Numeric variables related to stations, potentially indicating various types of stations or sampling points. These variables provide information about the station locations and their association with different aspects of the data.
+
+*Bottom_D*: An integer representing the bottom depth, providing information about the depth at which the cast was conducted. This variable contributes to the understanding of the oceanographic conditions at different depths.
+
+*Secchi*: An integer representing the Secchi depth, which is a measure of water transparency. This variable offers insights into the optical properties of water, providing information about the clarity of the water.
+
+*ForelU*: An integer representing the Forel-Ule scale, providing information about the color of the water. This variable contributes to the characterization of water color, potentially indicating water quality or composition.
+
+*Ship_Name*: A categorical factor representing the name of the ship involved in the cruise. This variable identifies the specific ship associated with each observation, allowing for ship-specific analyses.
+
+*Ship_Code*: A categorical factor representing the code of the ship, providing an identifier for the ship. Ship codes serve as an additional reference point for ship-related analyses.
+
+*Data_Type*: A categorical factor representing the type of data recorded during the cast. It indicates the nature of the observations, allowing for the categorization of data based on the type of information collected.
+
+*Order_Occ*, *Event_Num*: Numeric variables related to order and event number, potentially indicating the sequence or occurrence of events during the cast. These variables provide information about the ordering and occurrence of specific events during the data collection process.
+
+*Cruz_Leg*: A categorical factor representing cruise leg, providing additional information about different legs of a cruise. This variable can be useful for distinguishing between different segments or phases of a cruise.
+
+*Orig_Sta_ID*, *Data_Or*: Identifiers related to the origin of the station data, potentially indicating the source or origin of the data. These variables provide information about the data's provenance or source.
+
+*Cruz_Num*: A categorical factor representing the cruise number, providing a unique identifier for each cruise event. This variable serves as an additional reference for categorizing observations based on cruise number.
+
+*IntChl*, *IntC14*: Numeric variables representing chlorophyll and Carbon-14 values. These variables provide information about the concentration of chlorophyll and Carbon-14 in the water, contributing to the characterization of biological and chemical properties.
+
+*Inc_Str*, *Inc_End*, *PST_LAN*, *Civil_T*, *TimeZone*: Various time-related variables, including start and end times, PST (Pacific Standard Time) local apparent noon, civil time, and time zone. These variables offer detailed temporal information, aiding in the precise characterization of time-related aspects during the cast.
+
+*Wave_Dir*, *Wave_Ht*, *Wave_Prd*, *Wind_Dir*, *Wind_Spd*: Numeric variables representing wave and wind characteristics. These variables provide information about the direction, height, and period of waves, as well as the direction and speed of the wind during the cast.
+
+*Barometer*, *Dry_T*, *Wet_T*: Numeric variables representing atmospheric conditions, including barometric pressure, dry bulb temperature, and wet bulb temperature. These variables offer insights into the atmospheric conditions during the cast, contributing to the understanding of the environment.
+
+*Wea*: A categorical factor representing weather conditions. This variable provides information about the overall weather during the cast, allowing for the categorization of observations based on weather conditions.
+
+*Cloud_Typ*, *Cloud_Amt*, *Visibility*: Numeric variables representing cloud type, amount, and visibility. These variables offer details about the cloud cover and visibility during the cast, contributing to the characterization of atmospheric conditions.
+
+In summary, the cast.csv file contains a diverse set of variables that capture a wide range of information about oceanographic and atmospheric conditions during each cast in the calCOFI database. The dataset is rich in both spatial and temporal dimensions, offering valuable insights into the dynamics of the marine environment. Researchers and analysts can explore relationships, trends, and patterns within this dataset to gain a deeper understanding of the oceanographic and atmospheric phenomena captured during cruises.
+
+*Project Description*: This analysis focuses on exploring the linear relationship between the 'Distance' and 'Bottom_D' variables in the calCOFI's cast.csv dataset. By examining how the spatial 'Distance' from a station correlates with the 'Bottom_D' (bottom depth) during oceanographic casts, we aim to uncover patterns in ocean depth. Statistical methods such as data cleaning, NA elimination, one and two varibake analysis' and liner regression models will be employed to quantify and visualize the strength of this relationship.The project outcomes will offer valuable insights into understanding and evaulating the relationship.
+
+## Factorizing Variables
+
+   Firstly, we inspected the summary and structure outcomes for the data. We made a list of possible variables that can be factorized. In this list we had the variables; *Cruise_id*, *Cruise*,*Cruise_Sta*, *Quarter*, *Sta_Code*, *Year*, *Month*, *Lat_Hem*, *Lon_Hem* ,*Ship_Name* ,*Ship_Code* ,*Data_Type* ,*Cruz_Leg* ,*Cruz_Num* and *Wea*.
+
+   We tried factorizing *Cruise_ID* but it had 662 levels as a factor. However, we decided 662 levels were too much to work with and gave up the factorization idea.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+getwd()
+list.files()
+data <- read.csv("Cast.csv")
+library(ggplot2)
+library(dplyr)
+
+summary(data)
+str(data)
+sum(is.na(data))
+
+data$Cruise <- factor(data$Cruise) 
+data$Quarter <- factor(data$Quarter)
+data$Sta_Code <- factor(data$Sta_Code)
+data$Year <- factor(data$Year)
+data$Month <- factor(data$Month)
+data$Lat_Hem <- factor(data$Lat_Hem)
+data$Lon_Hem <- factor(data$Lon_Hem)
+data$Ship_Name <- factor(data$Ship_Name)
+data$Ship_Code <- factor(data$Ship_Code)
+data$Data_Type <- factor(data$Data_Type)
+data$Cruz_Leg <- factor(data$Cruz_Leg)
+data$Cruz_Num <- factor(data$Cruz_Num)
+data$Wea <- factor(data$Wea)
+data$Secchi <- factor(data$Secchi)
+```
+
+## Cleaning ID variables
+
+   We decided that having NAs in ID columns would lead to unidentifiable data and would be hard to classify. So for all columns that had the ID status, we directly omitted the NAs.These variables were *Cruise_ID*, *DbSta_ID*, *Cast_ID*, *Sta_ID* and *Orig_Sta_ID*.
+
+   After the ID columns were cleaned from NAs, as the next step of the data cleaning process, we checked if there were any duplicates. As mentioned on the data's source website, the cast.csv dataset had no duplicate rows.
+
+```{r}
+
+data$Cruise_ID <- na.omit(data$Cruise_ID) 
+data$DbSta_ID <- na.omit(data$DbSta_ID)
+data$Cast_ID <- na.omit(data$Cast_ID)
+data$Sta_ID <- na.omit(data$Sta_ID)
+data$Orig_Sta_ID <- na.omit(data$Orig_Sta_ID)
+
+sum(duplicated(data)) #there are no duplicates in data
+```
+
+## Cleaning and Replacing of the NAs
+
+### Directly Cleaned NAs
+
+    We made the assumption that if approxiamtely 60% of the variable's observations were NAs (35644/\*0,6 = 21386, rounded down to 21000 for simplicity reasons) we decided the omit the NAs. Since more than half of the data consists of NAs, replacing them with mean would be manipulating the data. We decided that it was more important to keep the natural variation and observations of our data as it is, even if it meant we would work with less number of rows. We got the summary of the data to check which variables has less than 21000 NAs.
+
+    The suitable variables were: *Distance*,*Bottom_D*,*Wind_Dir*,*Wind_Spd*, *Barometer*, *Dry_T*,*Wet_T*.
+
+
+### Replaced NAs
+
+   For the variables that had less than 21000 NAs, passed the first limit, we decided to add a secondary limit to decide which variables we can replace the NAs with mean without manipulating the original results of the data. We made the assumption that if the number of NAs is at 10% maximum (35644/\*0,1=3564, rounded up to 4000 for simplicity reasons), we can replace the NAs with the mean of the column.
+
+    The suitable variables were:*Bottom_D*,*Wind_Dir*,*Wind_Spd*.
+
+   After deciding how to clean the NAs in the data, we started the cleaning process.
+
+
+**Cleaning of Distance**
+
+We started cleaning the Distance column by replacing the values that are less than -200 to the median of the column. After replacing the data we drew its histogram, where we saw that most of the distance values are placed between [-200, 0] (Figure 1).
+
+```{r}
+data <- data[complete.cases(data$Distance), ]
+
+
+data$Distance <- ifelse(data$Distance <= -200,
+                     median(data$Distance, na.rm = TRUE),
+                     data$Distance)
+
+
+ggplot(data, aes(x= Distance))+
+  geom_histogram(binwidth = 20, color = '#AA96DA', fill = '#C5FAD5') +
+  ggtitle("Absolute Distance Histogram") + theme(plot.title = element_text(size=13)) +
+  labs(title = "Distance vs Bottom Depth", x = "Nautical mile distance to coast", y = "Number of Distances",
+       caption = "Figure 1: Distance Histogram") + xlim(-500, 0)
+
+```
+
+**Cleaning of Wind Speed**
+
+For Wind Speed, we started by replacing the NAs with the columns mean value. Using boxplot graph of Wind Speed (Figure 2), we oserved that there were a good amount of outliers. We replaced them with the mean value and created the histogram for it (Figure 3). The mean value, as seen on Figure 2 is approximately 10. Histogram shows us that the most frequent wind speed value was around 12.
+
+```{r}
+summary(data$Wind_Spd)
+
+data$Wind_Spd <- ifelse(is.na(data$Wind_Spd), 
+                             mean(data$Wind_Spd, na.rm = TRUE),
+                             data$Wind_Spd)
+
+data$Wind_Spd <- ifelse(data$Wind_Spd > 25,
+                     mean(data$Wind_Spd, na.rm = TRUE),
+                     data$Wind_Spd)
+
+ggplot(data, aes(y=Wind_Spd))+
+  geom_boxplot(color = '#2F3C7E', fill = '#FBEAEB') +
+      ggtitle("Wind Speed Box Plot") + theme(plot.title = element_text(size=13)) +
+  labs(caption = "Figure 2: Wind Speed Box Plot")
+
+
+ggplot(data, aes(x= Wind_Spd))+
+  geom_histogram(binwidth = 3, color = '#AA96DA', fill = '#C5FAD5')+
+   ggtitle("Wind Speed Histogram") + theme(plot.title = element_text(size=13)) +
+  labs(caption = "Figure 3: Wind Speed Histogram")
+```
+**Cleaning of Wind Direction**
+
+Using the summary function we observed the NA count of Wind Direction. we replaced the NA values and the outliers of the column, using its mean value.
+
+```{r}
+summary(data$Wind_Dir)
+
+data$Wind_Dir <- ifelse(is.na(data$Wind_Dir), 
+                             mean(data$Wind_Dir, na.rm = TRUE),
+                             data$Wind_Dir)
+
+
+data$Wind_Dir <- ifelse(data$Wind_Dir < 17,
+                     mean(data$Wind_Dir, na.rm = TRUE),
+                     data$Wind_Dir)
+```
+
+**Cleaning of Latitude Variables (Lat_Dec, Lat_Min, Lat_Deg)**
+
+None of the Latitude variables had NA values so we didn't do anything for them.
+
+```{r}
+#Latitude variables
+summary(data$Lat_Dec)
+sum(is.na(data$Lat_Dec))
+
+summary(data$Lat_Min)
+sum(is.na(data$Lat_Min))
+
+summary(data$Lat_Deg)
+sum(is.na(data$Lat_Deg))
+```
+
+**Cleaning of Longitude Variables (Lon_Dec, Lon_Min, Lon_Deg)**
+
+Just like Latitude variable, Longitude variable didn't have NAs as well.
+
+```{r}
+summary(data$Lon_Dec)
+sum(is.na(data$Lon_Dec))
+
+summary(data$Lon_Min)
+sum(is.na(data$Lon_Min))
+
+summary(data$Lon_De)
+sum(is.na(data$Lon_Deg))
+```
+
+**Cleaning of Rpt_Line**
+
+```{r}
+#Rpt_Line
+summary(data$Rpt_Line)
+sum(is.na(data$Rpt_Line))
+
+data$Rpt_Line <- ifelse(data$Rpt_Line < 67,
+                     mean(data$Rpt_Line , na.rm = TRUE),
+                     data$Rpt_Line )
+```
+
+**Cleaning of Ac_Line**
+
+```{r}
+summary(data$Ac_Line)
+sum(is.na(data$Ac_Line))
+
+data$Ac_Line <- ifelse(data$Ac_Line < 67,
+                     mean(data$Ac_Line , na.rm = TRUE),
+                     data$Ac_Line )
+```
+
+**Cleaning of Bottom_D**
+
+```{r}
+summary(data$Bottom_D)
+sum(is.na(data$Bottom_D))
+
+data$Bottom_D <- ifelse(is.na(data$Bottom_D), 
+                             mean(data$Bottom_D, na.rm = TRUE),
+                             data$Bottom_D)
+```
+
+**Cleaning of Dry_T**
+
+```{r}
+summary(data$Dry_T)
+sum(is.na(data$Dry_T))
+
+data <- data[complete.cases(data$Dry_T), ]
+```
+
+**Cleaning of Wet_T**
+
+```{r}
+summary(data$Wet_T)
+sum(is.na(data$Wet_T))
+
+data$Wet_T <- ifelse(is.na(data$Wet_T), 
+                             mean(data$Wet_T, na.rm = TRUE),
+                             data$Wet_T)
+```
+
+**Cleaning of Barometer**
+
+```{r}
+sum(is.na(data$Barometer)) 
+
+data$Barometer <- ifelse(is.na(data$Barometer), 
+                             mean(data$Barometer, na.rm = TRUE),
+                             data$Barometer)
+```
+## One Variable Analysis
+
+## Categorical Variables
+
+    There are 14 categorical variables in the data, *Cruise*, *Quarter*, *Sta_Code*, *Year*, *Month*, *Lat_Hem*, *Lon_Hem*, *Secchi*, *Ship_Name*, *Ship_Code*, *Data_Type*, *Cruz_Leg*, *Cruz_Num* and *Wea*.
+
+```{r}
+secchi_table <- table(data$Secchi)
+secchi_table
+```
+
+
+### Bar Charts
+
+```{r}
+ggplot(data, aes(x=Quarter)) + 
+  geom_bar(fill="lightblue", color="navy")+
+  labs(x="Quarter", y="Count", caption = "Figure 4: Count of each entry by quarter")
+```
+As it can be seen from Figure 4, all four quarters have relatively similar amount of entries within them, but Q1 has the maximum value with above 10000, the quarter that has the least entries is Q4 with just below 7500. This leads us to believe that Q1 has the most amount of observations.
+
+
+```{r}
+ggplot(data, aes(x=Sta_Code)) + 
+  geom_bar(fill="lightblue", color="navy")+
+  labs(x="Station Code", y="Count", caption = "Figure 5: Count of each station code")
+```
+Figure 5 shows the count of each station code. From the graph, it is easy to say that the ST Station Code is the most commonly used one.
+
+
+```{r}
+ggplot(data, aes(x=Month)) + #3 month patterns all through the year
+  geom_bar(fill="lightblue", color="navy")+
+  labs(x="Month", y="Count", caption = "Figure 6: Count of each month")
+```
+On Figure 6, we can see that there is a pattern that repeats itself every three months. Within the three months there is a decreasing trend. The month that has the most observations is April with the count of approximately 5000.
+
+
+```{r}
+ggplot(data, aes(x=Data_Type)) + 
+  geom_bar(fill="lightblue", color="navy")+
+  labs(x="Data Type", y="Count", caption = "Figure 7: Count of each Data Type")
+```
+We can easily say that majority of our data consists of the type MX by Figure 7.
+
+```{r}
+summary(data$Wea)
+
+ggplot(subset(data, !is.na(data$Wea)), aes(x=Wea)) + 
+  geom_bar(fill="lightblue", color="navy")+
+  labs(x="Wea", y="Count", caption = "Figure 8: Count of each Wea code")
+
+```
+From the summary of Wea code we can see that most of our data uses 1 as its wea code, whereas 3, 7, 8 and 9 are the least used ones. There also appears to be 5795 NA values. We plotted the count of each wea code without the NA values in Figure 8.
+
+
+```{r}
+ggplot(subset(data, !is.na(data$Secchi)), aes(x=Secchi)) + 
+  geom_bar(fill="lightblue", color="navy")+
+  labs(x="Secchi", y="Count", caption = "Figure 9: Secchi Bar Chart" )
+```
+Figure 9 visualizes the table of Secchi, which is one of our categorical variables and there we can see that Factor 16 has the most entries with a value close to 300.
+
+## TWO VARIABLE ANALYSIS
+
+For two variable analysis, we tried various pairs and kept the ones that could be easily interpreted through their plots.
+
+```{r}
+
+ggplot(data, aes(y=Wind_Spd))+
+  geom_boxplot(color = '#F96167', fill = '#F9E795')
+  ggtitle("Wind Speed Box Plot " ) +
+  theme(plot.title =  element_text(size=13))+
+  labs(caption = "Figure 10: Wind Speed Box Plot")
+```
+
+In Figure 10, we faceted wind speed graphs by Quarter. There are no drastic changes in the mean of wind speed by quarter but the amount of outliers varied for every quarter. The second quarter has the least amount of outliers wheras the fourth quarter have the biggest outliers.
+
+```{r}
+ggplot(data, aes(x = Distance, y = Bottom_D)) +
+  geom_point(color = '#F96167') +
+  labs(x = "Bottom Depth", y = "Distance",  caption = "Figure 11: Distance vs Bottom Depth scatter plot")
+```
+
+In Figure 11, Bottom Depth and Distance. The distance value originally consists of negative values but for the sake of having a more easily understandable graph, we took the absolute value of the Distance variable.
+
+
+#Choosing Dependent Variable with Correlation Matrix
+
+While creating linear models we chose Bottom_D to be our dependent variable. There are variety of reasons for this choice.
+
+- Bottom_D represents the bottom depth, which is a very important parameter in oceanography. It provides information about the depth at which the cast was conducted, contributing to the understanding of the oceanographic conditions at different depths.
+
+- This variable is measured directly, which makes it a reliable and objective measure of the physical characteristics of the ocean.
+
+- It provides spatial information about the vertical structure of the water column. It can be used to analyse spatial variations in oceanographic conditions, especially while considering geographical variables (ex. latitude and longitude)
+
+- The correlation between other relevant variables and Bottom_D is likely to be high, considering the depth of the ocean affects many variables, such as Secchi and Wind Speed.
+
+Considering these facts we drew a correlation matrix and its colored table (Table 1) to check the relations of other variables with Bottom_D. We observed that Distance has the highest correlation with the bottom depth so we started our first model using Bottom_D as the dependent variable and Distance as the independent variable.
+
+```{r}
+numeric_subset <- data[, sapply(data, is.numeric)]
+str(numeric_subset)
+
+cor_matrix <- cor(numeric_subset)
+cor_matrix
+#install.packages("corrplot")
+library(corrplot)
+corrplot(cor_matrix,   title = "Table 1: Correlatation Matrix Graph")
+
+```
+
+## Linear Regression Models
+
+**Model 1**
+
+In model 1, we focus on the relationship between distance and bottom depth variables. As a start we only consider these two variables by themselves. Summary of model 1 shows us that Distance variable is statistically significant since it has a p-value smaller than 0.05. Since this is a model with only 1 independent variable, we can look at both R-squared and adjusted R-squared values. For this very reason the outcome shows the two values as equals with the value of 0.5318. 
+
+Ideally, we would like to see a much higher value for R-squared but considering the model only has 1 independent variable and can be worked on to get better, we decide that it is enough to start with and continue with this model. 
+
+Finally, as seen on Figure 12, the data is scattered across with no obvious pattern. With the hopes of smoothing it we decided to apply logarithmic and square root transformations.
+
+```{r}
+model1 <- lm(Bottom_D~Distance, data)
+summary(model1) #adjusted R squared is 0.5318 
+
+coeff1 <- model1$coefficients
+intercept1 <- coeff1[1]
+slope1 <- coeff1[2]
+
+ggplot(data, aes(x = Distance, y = Bottom_D)) +
+  geom_point() +
+  ylim(0,6000) +
+  geom_abline(intercept = intercept1, slope = slope1, color="red") +
+  labs(x = "Distance", y = "Bottom Depth",  caption = "Figure 12: Distance vs Bottom Depth scatter plot of model1 ")
+```
+
+**Model 2**
+
+For model 2, we applied logarithmic transformation. As summary of model 2 shows, p-value for Distance stayed the same and the independent variable is still significant.
+
+Looking at the adjusted R-square value of 0.4974, we can see that there is a drop compared to the previous 0.5211 of model 1. It is clear that we have failed to improve model 1 using the logarithmic transformation. This fail of improvement can also be seen on Figure 13, as it still fails the constant variance assumption.
+
+```{r}
+model2_log <- lm(log(Bottom_D)~Distance, data = data)
+summary(model2_log)  #adjusted R squared is 0.4974  
+
+ggplot(data, aes(x = Distance, y = resid(model2_log))) +
+  geom_point() +
+  geom_abline(intercept = 0 , slope = 0 , color="red") +
+labs(x = "Distance", y = "Bottom Depth",  caption = "Figure 13: Logarithmic transformation model's residual plot")
+```
+
+**Model 3**
+
+For model 3, we tried square root transformation. As summary of the model 3 shows, Distance variable has stayed significant. The adjusted R-squared value has increased significantly compared to both model 1 and especially model 2. We can say that the square root transformation worked better for our data and it also worked better than logarithmic transformation.
+
+
+```{r}
+model3_sqrt <- lm(sqrt(Bottom_D)~Distance, data)
+summary(model3_sqrt)  #adjusted R squared is 0.5554  
+
+ggplot(data, aes(x = Distance, y = resid(model3_sqrt))) +
+  geom_point() +
+  geom_abline(intercept = 0 , slope = 0 , color="red") +
+  labs(x = "Distance", y = "Bottom Depth",  caption = "Figure 14: Square root transformation model's residual plot")
+```
+
+**Model 4**
+
+For model 4, we checked the correlation matrix for adding new variable in the model. After that we saw that there is a correlation between Bottom_D and Lon_Dec with value -0.7358. So that we decided to add this variable to the model. As summary of the model 4 shows, Distance variable has stayed significant. The adjusted R-squared value has jump significantly from 0.5554 to 0.7265 compared to previous model. We can certainly say that adding the Lon_Dec variable worked better for our data.
+
+When we compare Figure 15 with Figure 14, we see that the distribution is more balanced. We also see that the adjusted R-squared value of this interpretation increases from 0.5554 to 0.7265.
+
+```{r}
+model4 <- lm(Bottom_D~Distance + Lon_Dec, data)
+summary(model4)  #adjusted R squared is 0.7265    
+
+ggplot(data, aes(x = Distance, y = resid(model4))) +
+  geom_point() +
+  geom_abline(intercept = 0 , slope = 0 , color="red") +
+  labs(x = "Distance", y = "Bottom Depth",  caption = "Figure 15: Model 4 residual plot")
+```
+
+**Model 5**
+
+To evaluate the addition of a new variable to Model 5, we looked at the correlation matrix. We then found that Bottom_D and St_Station had a 0.8088 correlation. As such, we decided to include this variable in the model. Model 5's summary shows that the Distance variable is still statistically significant. Additionally, in comparison to Model 5, the adjusted R-squared value increased from 0.7265 to 0.767. It is clear that the model performs better with our data set now that the St_Station variable has been added. This better performance can also be seen on Figure 16, as the residuals are closer to fitting into the constant variance assumption.
+
+```{r}
+model5 <- lm(Bottom_D~Distance + Lon_Dec + St_Station, data)
+summary(model5)  #adjusted R squared is 0.767     
+
+ggplot(data, aes(x = Distance, y = resid(model5))) +
+  geom_point() +
+  geom_abline(intercept = 0 , slope = 0 , color="red", ) +
+  labs(caption = "Figure 16: Model 5 residual plot")
+```
+
+**Model 6** 
+
+For model 6, we introduced Secchi to the model as a new independent variable. This resulted with a slight increase on the Adjusted R squared value from 0.767 to 0.7836. p - values for the previous independent variables remained the same and significant. Secchi levels also turned out to be insignificant except Secchi52 level where the p-value came as 0.00398. Since Secchi has a big amount of NA data the insignificance of the levels might be caused by this. 
+
+```{r}
+model6 <- lm(Bottom_D~Distance + Lon_Dec + St_Station + Secchi , data)
+summary(model6)  #adjusted R squared is 0.7836      
+
+```
+
+**Model 7**
+
+We included Wind Speed as a new independent variable for model 7. Although it improved the Adjusted R squared value, it only increased 0.0013 making it 0.7849. However, it lowered the p-values for Secchi levels, getting some of them closer to be significant. Wind Speed itself is proved to be significant by its p-value as well.
+
+```{r}
+model7 <- lm(Bottom_D~Distance + Lon_Dec + St_Station + Secchi + Wind_Spd , data)
+summary(model7)  #adjusted R squared is 0.7849      
+```
+
+
+## Conclusion
+Throughout our analysis, we tried multiple ways to create the best linear relationship between Bottom Depth and Distance. Looking at the adjusted R squared values, we decided that the model 7 gives us the best relationship and model 7 is the model to choose. 
+
+As it can be seen on Model 1's outcomes, the relationship started with a relatively low adjusted R-squared value of 0.5318, however after many tries such as transformations on the model and adding of independent variables we were able to increase the adjusted R-square value to 0.7849. We believe that this is a pretty significant increase and we took to right steps in the process. Although there were some decreases in the process, we were able to get back on track with our trials. 
+
+
