@@ -2,7 +2,7 @@
 Authors: Elçin Erhan, İrem Yılmaz, Ozan Metin Zehir
 ## Introduction to cast.csv data set
 
-    *Cst_Cnt*: This variable serves as a unique identifier for each cast, allowing for the distinction of individual observations. It aids in referencing and organizing the data.
+*Cst_Cnt*: This variable serves as a unique identifier for each cast, allowing for the distinction of individual observations. It aids in referencing and organizing the data.
 
 *Cruise_ID*: Cruise_ID is an identifier associated with a specific cruise event. It serves as a categorical reference, helping categorize data based on the unique identifier assigned to each cruise.
 
